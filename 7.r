@@ -1,0 +1,7 @@
+attach(stock)
+r <- sqrt(TURNOVER/pi)
+pchgnum <- as.numeric(as.character(PCHG))
+ci<-abs(pchgnum/11)
+ci2=ifelse(is.na(ci),0,ci)
+symbols(DATE,TCLOSE,circle=r,fg="white",bg=ifelse(pchgnum>0,rgb(ci2,0,0),rgb(0,ci2,0)))
+detach(stock)
